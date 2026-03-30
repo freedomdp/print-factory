@@ -3,6 +3,14 @@
  * Header Contacts Drawer (Panel) "Brick"
  */
 $contacts = PrintFactory_Content::get_section('header.contacts');
+
+// Fallback icons from theme assets
+$assets_icons = get_template_directory_uri() . '/assets/images/icons/';
+$phone_icon = !empty($contacts['phone_icon']) ? $contacts['phone_icon'] : $assets_icons . 'phone.svg';
+$telegram_icon = !empty($contacts['telegram_icon']) ? $contacts['telegram_icon'] : $assets_icons . 'telegram.svg';
+$viber_icon = !empty($contacts['viber_icon']) ? $contacts['viber_icon'] : $assets_icons . 'viber.svg';
+$whatsapp_icon = !empty($contacts['whatsapp_icon']) ? $contacts['whatsapp_icon'] : $assets_icons . 'whatsapp.svg';
+$email_icon = !empty($contacts['email_icon']) ? $contacts['email_icon'] : $assets_icons . 'email.svg';
 ?>
 
 <div class="contacts-drawer" id="contacts-drawer" aria-hidden="true">
@@ -23,7 +31,7 @@ $contacts = PrintFactory_Content::get_section('header.contacts');
             <!-- Телефон -->
             <a href="<?php echo esc_url($contacts['phone_link']); ?>" class="contact-card card-phone">
                 <div class="card-icon">
-                    <img src="<?php echo esc_url($contacts['phone_icon'] ?? ''); ?>" alt="Phone" width="24" height="24">
+                    <img src="<?php echo esc_url($phone_icon); ?>" alt="Phone" width="24" height="24">
                 </div>
                 <div class="card-info">
                     <span class="card-label">ТЕЛЕФОН</span>
@@ -35,7 +43,7 @@ $contacts = PrintFactory_Content::get_section('header.contacts');
             <a href="<?php echo esc_url($contacts['telegram']); ?>" target="_blank" rel="noopener"
                 class="contact-card card-telegram">
                 <div class="card-icon">
-                    <img src="<?php echo esc_url($contacts['telegram_icon'] ?? ''); ?>" alt="Telegram" width="24"
+                    <img src="<?php echo esc_url($telegram_icon); ?>" alt="Telegram" width="24"
                         height="24">
                 </div>
                 <div class="card-info">
@@ -47,7 +55,7 @@ $contacts = PrintFactory_Content::get_section('header.contacts');
             <!-- Viber -->
             <a href="<?php echo esc_url($contacts['viber']); ?>" class="contact-card card-viber">
                 <div class="card-icon">
-                    <img src="<?php echo esc_url($contacts['viber_icon'] ?? ''); ?>" alt="Viber" width="24" height="24">
+                    <img src="<?php echo esc_url($viber_icon); ?>" alt="Viber" width="24" height="24">
                 </div>
                 <div class="card-info">
                     <span class="card-label">VIBER</span>
@@ -59,7 +67,7 @@ $contacts = PrintFactory_Content::get_section('header.contacts');
             <a href="<?php echo esc_url($contacts['whatsapp']); ?>" target="_blank" rel="noopener"
                 class="contact-card card-whatsapp">
                 <div class="card-icon">
-                    <img src="<?php echo esc_url($contacts['whatsapp_icon'] ?? ''); ?>" alt="WhatsApp" width="24"
+                    <img src="<?php echo esc_url($whatsapp_icon); ?>" alt="WhatsApp" width="24"
                         height="24">
                 </div>
                 <div class="card-info">
@@ -71,7 +79,7 @@ $contacts = PrintFactory_Content::get_section('header.contacts');
             <!-- Email -->
             <a href="mailto:<?php echo esc_attr($contacts['email']); ?>" class="contact-card card-email">
                 <div class="card-icon">
-                    <img src="<?php echo esc_url($contacts['email_icon'] ?? ''); ?>" alt="Email" width="24" height="24">
+                    <img src="<?php echo esc_url($email_icon); ?>" alt="Email" width="24" height="24">
                 </div>
                 <div class="card-info">
                     <span class="card-label">EMAIL</span>
