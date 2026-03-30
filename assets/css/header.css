@@ -1,0 +1,346 @@
+/* ============================================
+   HEADER STYLES (MOBILE-FIRST)
+   ============================================ */
+
+.site-header {
+    background: rgba(8, 12, 22, 0.8);
+    backdrop-filter: blur(10px);
+    padding: var(--space-sm) 0;
+    position: fixed;
+    /* Always sticky for better UX on long pages */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.site-header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+.site-header.scrolled {
+    background: rgba(8, 12, 22, 0.95);
+    padding: var(--space-xs) 0;
+    border-bottom: 1px solid var(--color-border-default);
+    box-shadow: var(--shadow-md);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xl);
+}
+
+/* ============================================
+   DESKTOP NAVIGATION
+   ============================================ */
+
+.header-nav-desktop {
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: var(--space-lg);
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-primary-main);
+}
+
+/* ============================================
+   UTILITY VISIBILITY
+   ============================================ */
+
+.d-none {
+    display: none !important;
+}
+
+@media (min-width: 992px) {
+    .d-lg-block {
+        display: block !important;
+    }
+
+    .d-lg-flex {
+        display: flex !important;
+    }
+
+    .site-header {
+        padding: var(--space-md) 0;
+    }
+}
+
+/* ============================================
+   LOGO
+   ============================================ */
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+}
+
+.logo-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-md);
+    box-shadow: 0 0 15px var(--color-primary-glow);
+}
+
+.logo-text {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+/* ============================================
+   CONTACTS & ACTIONS
+   ============================================ */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.contacts-circle-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    background: var(--gradient-primary);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: var(--shadow-glow-primary);
+}
+
+.contacts-circle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: var(--button-primary-hover-box-shadow);
+}
+
+.contacts-circle-btn img {
+    width: 22px;
+    height: 22px;
+    display: block;
+    filter: brightness(0) invert(1);
+}
+
+.calc-circle-btn {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: var(--radius-full) !important;
+    background: var(--bg-level2);
+    border: 1px solid var(--color-primary-main);
+    color: var(--color-primary-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    font-size: 20px !important;
+    box-shadow: 0 0 10px rgba(21, 237, 201, 0.1);
+}
+
+.calc-circle-btn:hover {
+    background: var(--bg-level3);
+    border-color: var(--color-primary-main);
+    transform: scale(1.1);
+    box-shadow: var(--shadow-glow-primary);
+}
+
+/* ============================================
+   CONTACTS DRAWER
+   ============================================ */
+
+/* Overlay */
+.drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 1999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.drawer-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.contacts-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 90%;
+    height: 100vh;
+    background: var(--bg-body);
+    z-index: 2000;
+    transition: right 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 768px) {
+    .contacts-drawer {
+        width: 400px;
+    }
+}
+
+.contacts-drawer.active {
+    right: 0;
+}
+
+.drawer-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    border-bottom: 1px solid var(--border-default);
+}
+
+.drawer-back {
+    background: none;
+    border: none;
+    padding: var(--space-xs);
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
+.drawer-title {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.drawer-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-lg);
+}
+
+.contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: var(--bg-level2);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    background: var(--bg-level3);
+    border-color: var(--border-hover);
+    transform: translateX(8px);
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.card-icon img {
+    width: 26px;
+    height: 26px;
+    display: block;
+    object-fit: contain;
+}
+
+/* Кольори іконок */
+.card-phone .card-icon {
+    background: rgba(59, 130, 246, 0.25);
+    border: 1px solid rgba(59, 130, 246, 0.5);
+}
+
+.card-telegram .card-icon {
+    background: rgba(14, 165, 233, 0.25);
+    border: 1px solid rgba(14, 165, 233, 0.5);
+}
+
+.card-viber .card-icon {
+    background: rgba(124, 58, 237, 0.25);
+    border: 1px solid rgba(124, 58, 237, 0.5);
+}
+
+.card-whatsapp .card-icon {
+    background: rgba(16, 185, 129, 0.25);
+    border: 1px solid rgba(16, 185, 129, 0.5);
+}
+
+.card-email .card-icon {
+    background: rgba(239, 68, 68, 0.25);
+    border: 1px solid rgba(239, 68, 68, 0.5);
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-label {
+    font-size: 10px;
+    font-weight: var(--font-bold);
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    margin-bottom: 2px;
+}
+
+.card-value {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Body Lock */
+body.drawer-open {
+    overflow: hidden;
+}

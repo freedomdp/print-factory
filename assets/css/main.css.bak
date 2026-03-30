@@ -1,0 +1,1198 @@
+/* ============================================
+   MAIN LAYOUT & SECTION STYLING
+   ============================================ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: var(--font-primary);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-body);
+    line-height: var(--leading-normal);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display);
+    font-weight: var(--font-bold);
+    margin-top: 0;
+    color: var(--color-text-primary);
+}
+
+:root {
+    /* Colors - Primary */
+    --color-primary-main: #15EDC9;
+    --color-primary-light: #4DF4DA;
+    --color-primary-dark: #0BC9A8;
+    --color-primary-glow: rgba(21, 237, 201, 0.4);
+
+    /* Colors - Secondary */
+    --color-secondary-teal-bright: #4DF4DA;
+    --color-secondary-teal-deep: #10B8A0;
+    --color-secondary-teal-dark: #0A8A75;
+
+    /* Colors - Background */
+    --color-bg-body: #080C16;
+    --color-bg-level1: #0F1419;
+    --color-bg-level2: #1A1F2E;
+    --color-bg-level3: #252B3A;
+
+    /* Colors - Text */
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #B0B8C8;
+    --color-text-muted: #6B7280;
+
+    /* Colors - Border */
+    --color-border-default: rgba(255, 255, 255, 0.1);
+    --color-border-hover: rgba(21, 237, 201, 0.3);
+
+    /* Colors - Status */
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-error: #EF4444;
+
+    /* Typography - Font Family */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-display: 'Space Grotesk', 'Inter', sans-serif;
+
+    /* Typography - Font Size */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 3rem;
+    --text-6xl: 3.75rem;
+
+    /* Typography - Font Weight */
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+
+    /* Typography - Line Height */
+    --leading-tight: 1.25;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.75;
+
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    --space-4xl: 6rem;
+
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-2xl: 1.5rem;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --shadow-glow-primary: 0 0 20px rgba(21, 237, 201, 0.5), 0 0 40px rgba(21, 237, 201, 0.3);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #15EDC9 0%, #0BC9A8 100%);
+    --gradient-intense: linear-gradient(135deg, #4DF4DA 0%, #15EDC9 100%);
+    --gradient-text: linear-gradient(135deg, #4DF4DA 0%, #0BC9A8 100%);
+    --gradient-text-silver: linear-gradient(135deg, #ffffff 0%, #B0B8C8 100%);
+    --gradient-subtle: linear-gradient(135deg, #15EDC9 0%, #10B8A0 100%);
+    --gradient-background_blob: radial-gradient(circle, rgba(21, 237, 201, 0.15) 0%, transparent 70%);
+
+    /* Layers */
+    --z-negative: -1;
+    --z-normal: 1;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+.section-padding {
+    padding: var(--space-4xl) 0;
+    /* Зменшено в 2 рази з 160px -> used space-4xl (96px) for consistency */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Градієнтна підкладка для кожної секції */
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-background_blob);
+    pointer-events: none;
+    z-index: var(--z-negative);
+}
+
+.container {
+    max-width: 1200px;
+    /* Keep standard max-width, or move to var if needed */
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+    width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 88vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: transparent;
+}
+
+.hero-slider {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    background-color: var(--color-bg-body);
+    /* Ensure solid background behind image to hide global grid */
+    overflow: hidden;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    z-index: var(--z-normal);
+}
+
+/* Parallax Background Image */
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    /* Increased opacity for better visibility */
+    transform: scale(1.1);
+    transition: transform 10s ease, opacity 1s ease;
+    z-index: 0;
+}
+
+/* Gradient Overlay for Text Readability */
+.hero-slide::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 40%, transparent 100%);
+    z-index: var(--z-normal);
+    pointer-events: none;
+}
+
+.hero-slide.active .hero-bg {
+    transform: scale(1);
+    opacity: 0.8;
+    /* Slightly brighter on active */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    /* Ensure content is above overlay */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Align to bottom */
+    padding-bottom: 120px;
+    /* Space for pagination */
+    max-width: 800px;
+}
+
+/* Ensure content is above bg */
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Fix for Hero Content Alignment */
+.hero-slide .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hero-content {
+    max-width: 800px;
+    text-align: left;
+    transform: scale(0.9);
+    transform-origin: bottom left;
+}
+
+.hero-subtitle {
+    font-size: var(--text-base);
+    /* Reduced by 25% from 20px -> ~16px (text-base) */
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-xl);
+    max-width: 600px;
+    line-height: var(--leading-normal);
+}
+
+.hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+    align-items: flex-start;
+}
+
+.hero-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md) var(--space-xl);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--color-bg-body);
+    background: var(--color-primary-main);
+    border: none;
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-glow-primary);
+}
+
+.hero-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(21, 237, 201, 0.6);
+    /* Custom glow expansion */
+    background: var(--color-text-primary);
+    color: var(--color-bg-body);
+}
+
+.hero-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md) var(--space-xl);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    background: var(--color-border-default);
+    border: 1px solid var(--color-border-default);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.hero-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    color: var(--color-text-primary);
+}
+
+.hero-nav {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.hero-dots-wrapper {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--text-muted);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.3;
+    /* Less bright */
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-dot.active {
+    width: 32px;
+    /* 4x radius (assuming radius 4px -> 8px width? User said 4x radius of normal dot. Normal dot is 8px. Radius 4px. Width 32px sounds right for a pill) */
+    background: var(--color-border-default);
+    opacity: 1;
+}
+
+.hero-dot.active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: var(--color-primary);
+    border-radius: 4px;
+    animation: progressFill 6s linear forwards;
+    /* Matches JS interval */
+}
+
+@keyframes progressFill {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+h2.animate-header,
+.hero-content h1 {
+    font-size: clamp(28px, 4vw, 54px);
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.1;
+    line-height: 1.1;
+    background: var(--gradient-text-silver);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: 100%;
+    /* Allow full width of container */
+    width: 100%;
+    /* Ensure it takes full width */
+    text-align: left !important;
+    /* Force left alignment */
+    display: block;
+    /* Ensure block behavior */
+}
+
+/* Fix for split characters messing up layout */
+.split-word {
+    display: inline-block;
+    white-space: normal;
+    /* Allow wrapping within words if needed, though unlikely */
+}
+
+.section-subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    margin-top: -30px;
+    /* Keep negative margin for specific design intention, or create variable if reuse needed */
+    margin-bottom: var(--space-2xl);
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-xl);
+}
+
+@media (max-width: 900px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: var(--space-xl) 0;
+        min-height: auto;
+    }
+
+    .container {
+        padding: 0 var(--space-md);
+    }
+
+    .section-subtitle {
+        font-size: var(--text-base);
+        text-align: left;
+        margin-bottom: var(--space-lg);
+        margin-top: 0;
+    }
+
+    .stats-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+        margin: 0 -4px;
+        /* Compensate for internal gaps if needed, or rely on gap */
+    }
+
+    .stat-item {
+        padding: var(--space-sm);
+        flex: 1 1 calc(50% - var(--space-sm));
+        /* Default to 50% width minus gap */
+        box-sizing: border-box;
+    }
+
+    /* First item takes full width (top block) */
+    .stat-item:nth-child(1) {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    /* 2nd and 3rd share the row (50% each) */
+    .stat-item:nth-child(2),
+    .stat-item:nth-child(3) {
+        max-width: calc(50% - var(--space-sm));
+    }
+
+    .stat-number {
+        font-size: var(--text-2xl);
+        margin-bottom: 0;
+        line-height: 1.5;
+    }
+
+    .stat-label {
+        font-size: var(--text-xs);
+        line-height: 1.2;
+    }
+
+    .stat-sublabel {
+        font-size: 10px;
+        margin-top: 2px;
+    }
+
+    /* Force smaller headers on mobile */
+    h1,
+    .hero-content h1 {
+        font-size: var(--text-4xl) !important;
+    }
+
+    h2,
+    h2.animate-header {
+        font-size: var(--text-3xl) !important;
+        margin-bottom: var(--space-md);
+    }
+}
+
+.stat-item {
+    background: var(--color-bg-level2);
+    padding: var(--space-2xl);
+    /* 40px -> 3rem (48px) or 2.5rem? 40px is closer to 3rem. */
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border-default);
+    backdrop-filter: blur(10px);
+    /* glassmorphism var not defined, creating manually or using value */
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary-main);
+}
+
+.stat-number {
+    font-size: var(--text-5xl);
+    /* 48px = 3rem = 5xl */
+    font-weight: var(--font-bold);
+    /* 800 -> 700 (bold) or 800? Design system max is 700. using bold. */
+    color: var(--color-secondary-teal-bright);
+    margin-bottom: var(--space-sm);
+}
+
+.stat-label {
+    font-size: var(--text-lg);
+    /* 18px */
+    font-weight: var(--font-semibold);
+}
+
+.stat-sublabel {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    /* Standardizing */
+    margin-top: var(--space-xs);
+}
+
+/* Steps Grid (How it works) */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+}
+
+.step-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: var(--space-xl);
+    border-radius: var(--radius-xl);
+    /* 15px -> 1rem/16px closest */
+    position: relative;
+    border-left: 3px solid var(--color-secondary-teal-bright);
+}
+
+.step-number {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    font-size: var(--text-6xl);
+    /* 60px -> 3.75rem */
+    font-weight: 900;
+    /* Extra bold not in vars, using 700 */
+    font-weight: var(--font-bold);
+    opacity: 0.1;
+    color: var(--color-secondary-teal-bright);
+}
+
+.step-card h3 {
+    font-size: var(--text-xl);
+    /* 20px */
+    margin-bottom: var(--space-md);
+    color: var(--color-secondary-teal-bright);
+}
+
+.step-card p {
+    font-size: var(--text-base);
+    /* 16px */
+    color: rgba(255, 255, 255, 0.8);
+    /* Standardize to text-secondary? */
+    color: var(--color-text-secondary);
+}
+
+/* Portfolio Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
+}
+
+.portfolio-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-xl);
+    /* 20px -> ~1.25rem. using xl (1rem) or 2xl (1.5rem) */
+    overflow: hidden;
+    border: 1px solid var(--color-border-default);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-primary-main);
+    box-shadow: 0 20px 40px rgba(21, 237, 201, 0.1);
+}
+
+.portfolio-img {
+    width: 100%;
+    height: 250px;
+    /* Layout constraint, keeping px or moving to var if strictly needed. Keeping px for layout stability often okay but var preferred. */
+    object-fit: cover;
+}
+
+.portfolio-info {
+    padding: var(--space-xl);
+    /* 25px -> 1.5rem (24px) */
+    text-align: left;
+}
+
+.portfolio-info h3 {
+    font-size: var(--text-xl);
+    /* 20px */
+    margin-bottom: var(--space-md);
+}
+
+.portfolio-meta {
+    display: flex;
+    gap: var(--space-md);
+    font-size: var(--text-sm);
+    color: var(--color-primary-main);
+    margin-bottom: var(--space-md);
+}
+
+/* Pricing Table */
+.pricing-container {
+    overflow-x: auto;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-xl);
+    padding: var(--space-md);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+table.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.pricing-table th,
+.pricing-table td {
+    padding: var(--space-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pricing-table th {
+    color: var(--color-primary-main);
+    font-weight: var(--font-bold);
+}
+
+.price-tag {
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+}
+
+/* FAQ Accordion */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-md);
+    overflow: hidden;
+    border: 1px solid var(--color-border-default);
+}
+
+.faq-header {
+    padding: var(--space-lg);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: var(--font-semibold);
+    font-size: var(--text-lg);
+    transition: background 0.3s ease;
+}
+
+.faq-header:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-primary-main);
+}
+
+.faq-toggle {
+    font-size: var(--text-xl);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+    color: var(--color-primary-main);
+}
+
+.faq-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 var(--space-lg);
+}
+
+.faq-body p {
+    padding-bottom: var(--space-lg);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+    padding: 20px 25px;
+    max-height: 500px;
+}
+
+.faq-item.active .faq-question {
+    color: var(--accent-teal);
+    background: rgba(21, 237, 201, 0.05);
+}
+
+/* Payment Switcher */
+.payment-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.pay-tab {
+    padding: 15px 40px;
+    background: var(--bg-level2);
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    border: 1px solid var(--border-default);
+    transition: all 0.3s ease;
+}
+
+.pay-tab.active {
+    background: var(--color-primary);
+    color: var(--bg-body);
+    border-color: var(--color-primary);
+}
+
+.pricing-cta {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.pricing-cta .btn-primary {
+    padding: 18px 45px;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    box-shadow: var(--shadow-glow_primary);
+}
+
+/* ============================================
+   CALCULATOR (QUIZ) MODAL
+   ============================================ */
+
+.calculator-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.calculator-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.calculator-modal {
+    background: var(--bg-level1);
+    border: 1px solid var(--border-default);
+    width: 95%;
+    max-width: 400px;
+    /* Round 2 Compactness */
+    border-radius: var(--radius-xl);
+    padding: var(--space-md);
+    /* Round 2 Compactness */
+    position: relative;
+    transform: scale(0.9) translateY(30px);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    max-height: 80vh;
+    /* Round 2 Compactness */
+    overflow-y: auto;
+    font-size: 13px;
+    /* Round 2 Compactness */
+}
+
+.calculator-overlay.active .calculator-modal {
+    transform: scale(1) translateY(0);
+}
+
+.calc-close {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    background: var(--bg-level3);
+    border: none;
+    color: var(--text-muted);
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.calc-close:hover {
+    background: var(--bg-level4);
+    color: var(--text-primary);
+    transform: rotate(90deg);
+}
+
+.calc-steps-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+    /* Компактнее */
+}
+
+.step-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--bg-level3);
+    border: 1px solid var(--border-default);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.step-dot.active {
+    background: var(--gradient-primary);
+    color: var(--bg-body);
+    border-color: transparent;
+    box-shadow: var(--shadow-glow_primary);
+}
+
+.step-line {
+    width: 40px;
+    height: 2px;
+    background: var(--border-default);
+}
+
+.calc-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    /* Round 2 Compactness */
+    margin-bottom: var(--space-sm);
+    text-align: center;
+    background: var(--gradient-text_primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.calc-step {
+    display: none;
+}
+
+.calc-step.active {
+    display: block;
+    animation: calcFadeIn 0.5s ease;
+}
+
+@keyframes calcFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.form-group {
+    margin-bottom: 12px;
+    /* Round 2 Compactness */
+}
+
+/* Branded Slider */
+.form-group.full-width input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    background: var(--bg-level3);
+    border-radius: 4px;
+    outline: none;
+    padding: 0;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.form-group.full-width input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--color-primary-glow);
+    transition: all 0.2s ease;
+    border: 2px solid var(--bg-level2);
+}
+
+.form-group.full-width input[type=range]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px var(--color-primary-glow);
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.calc-select,
+.calculator-modal input[type="number"],
+.calculator-modal input[type="text"],
+.calculator-modal input[type="tel"],
+.calculator-modal input[type="email"],
+.calculator-modal textarea {
+    width: 100%;
+    background: var(--bg-level2);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-lg);
+    padding: 8px 12px;
+    /* Round 2 Compactness */
+    color: var(--text-primary);
+    font-size: 14px;
+    /* Round 2 Compactness */
+    transition: all 0.3s ease;
+}
+
+.calc-select:focus,
+.calculator-modal input:focus,
+.calculator-modal textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background: var(--bg-level3);
+    box-shadow: 0 0 15px var(--color-primary-glow);
+}
+
+.form-row {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.col {
+    flex: 1;
+}
+
+.calc-warning {
+    font-size: 11px;
+    line-height: 1.4;
+    color: var(--text-muted);
+    background: rgba(21, 237, 201, 0.05);
+    padding: 10px 14px;
+    border-left: 2px solid var(--color-primary);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    margin-bottom: var(--space-md);
+}
+
+.calc-summary {
+    background: var(--bg-level2);
+    padding: var(--space-md);
+    /* Уменьшено с space-xl */
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-primary-glow);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.calc-summary::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-primary);
+    opacity: 0.03;
+}
+
+.summary-line {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+    z-index: 1;
+}
+
+#calc-total-price {
+    font-size: 32px;
+    /* Уменьшено с 42px */
+    font-weight: 900;
+    color: var(--color-primary);
+    letter-spacing: -0.02em;
+    filter: drop-shadow(0 0 10px var(--color-primary-glow));
+}
+
+.discount-badge {
+    display: inline-block;
+    background: var(--gradient-primary);
+    color: var(--bg-body);
+    font-size: 10px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+/* Step 2 Specials */
+.file-upload {
+    border: 2px dashed var(--border-default);
+    padding: var(--space-xl);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    background: var(--bg-level2);
+}
+
+.file-upload:hover {
+    border-color: var(--color-primary);
+    background: var(--bg-level3);
+}
+
+.file-upload input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.messenger-selector {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+.messenger-option {
+    cursor: pointer;
+}
+
+.messenger-option input {
+    display: none;
+}
+
+.messenger-icon {
+    height: 54px;
+    background: var(--bg-level2);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.messenger-icon img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.7;
+    filter: brightness(0) invert(1);
+    /* Сделать белыми */
+    transition: all 0.4s ease;
+}
+
+.messenger-option input:checked+.messenger-icon {
+    border-color: var(--color-primary);
+    background: var(--bg-level3);
+    box-shadow: 0 0 20px var(--color-primary-glow);
+    transform: translateY(-4px);
+}
+
+.messenger-option input:checked+.messenger-icon img {
+    opacity: 1;
+    /* Turquoise Filter for #13ecc8 from White */
+    filter: invert(82%) sepia(28%) saturate(996%) hue-rotate(107deg) brightness(95%) contrast(92%);
+    transform: scale(1.2);
+}
+
+.calc-btns {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+    /* Уменьшено (Round 2) */
+}
+
+.calc-btns .btn-primary {
+    max-width: fit-content;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: var(--color-primary);
+    color: var(--bg-level1);
+    box-shadow: 0 0 20px var(--color-primary-glow);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: none;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    height: 44px;
+    /* Round 2 Compactness */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calc-btns .btn-primary:hover {
+    box-shadow: 0 0 30px var(--color-primary-glow);
+    transform: translateY(-2px);
+    background: var(--color-secondary-teal-bright);
+    /* Assuming defined or fallback needed */
+    color: var(--color-text-primary);
+    /* FORCE WHITE TEXT ON HOVER */
+    filter: brightness(1.1);
+}
+
+.btn-secondary {
+    border: 1px solid var(--border-default);
+    background: transparent;
+    color: var(--text-primary);
+    padding: 14px;
+    border-radius: var(--radius-lg);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: var(--bg-level2);
+    border-color: var(--text-muted);
+}
+
+.form-group.full-width {
+    width: 100% !important;
+    grid-column: 1 / -1 !important;
+    flex: 0 0 100% !important;
+}

@@ -1,0 +1,49 @@
+/* ============================================
+   TYPOGRAPHY & GRADIENTS
+   ============================================ */
+
+h1,
+h2,
+h3,
+.gradient-text {
+    display: block;
+    /* Скидаємо inline-block для заголовків, щоб не було проблем з позиціюванням */
+    margin-bottom: 1.5rem;
+}
+
+/* ============================================
+   PREMIUM ANIMATIONS (REVEAL)
+   ============================================ */
+
+.split-word {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.split-char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px) translateZ(0);
+    filter: blur(10px);
+
+    /* Градієнт тепер тут, щоб clipping працював з анімацією */
+    background: linear-gradient(135deg, #4DF4DA 0%, #0BC9A8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    transition:
+        opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        font-weight 0.4s ease;
+    /* Додаємо плавну зміну ваги */
+
+    will-change: transform, opacity, filter;
+}
+
+.reveal-active .split-char {
+    opacity: 1;
+    transform: translateY(0) translateZ(0);
+    filter: blur(0);
+}

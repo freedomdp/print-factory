@@ -1,0 +1,245 @@
+/* ============================================
+   ENGINEERING GRID & DYNAMIC BACKGROUNDS
+   ============================================ */
+
+:root {
+    --bg-dark: var(--bg-body);
+    --accent-teal: var(--color-primary);
+    --accent-teal-glow: var(--color-primary-glow);
+
+    /* Mood Variables */
+    --blob-1-top: -100px;
+    --blob-1-right: -100px;
+    --blob-2-bottom: 10%;
+    --blob-2-left: -100px;
+    --blob-3-opacity: 0.2;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* Background Scene Container */
+.bg-scene {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: -100 !important;
+    overflow: hidden;
+    pointer-events: none;
+    background-color: var(--bg-dark);
+}
+
+/* Engineering Grid Pattern - More visible and technological */
+.bg-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-image:
+        linear-gradient(var(--border-hover) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border-hover) 1px, transparent 1px),
+        linear-gradient(var(--border-default) 0.5px, transparent 0.5px),
+        linear-gradient(90deg, var(--border-default) 0.5px, transparent 0.5px);
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+    opacity: 0.6;
+    transform: translateZ(0);
+}
+
+/* Glow Blobs */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.5;
+    transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, top, left, right, bottom, opacity;
+}
+
+.blob-1 {
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, var(--accent-teal-glow) 0%, transparent 70%);
+    top: var(--blob-1-top);
+    right: var(--blob-1-right);
+    animation: float-slow 25s infinite alternate;
+}
+
+.blob-2 {
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, var(--accent-teal-glow) 0%, transparent 70%);
+    bottom: var(--blob-2-bottom);
+    left: var(--blob-2-left);
+    animation: float-medium 20s infinite alternate-reverse;
+}
+
+.blob-3 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(77, 244, 218, 0.1) 0%, transparent 70%);
+    top: 40%;
+    right: 20%;
+    opacity: var(--blob-3-opacity);
+    animation: float-slow 30s infinite alternate;
+}
+
+/* Section Moods (applied via JS classes on body) */
+
+body.section-about {
+    --blob-1-top: -200px;
+    --blob-1-right: -200px;
+    --blob-2-bottom: -100px;
+    --blob-2-left: 20%;
+    --blob-3-opacity: 0.4;
+}
+
+body.section-services {
+    --blob-1-top: 20%;
+    --blob-1-right: -100px;
+    --blob-2-bottom: 20%;
+    --blob-2-left: -300px;
+    --blob-3-opacity: 0.1;
+}
+
+body.section-portfolio {
+    --blob-1-top: 50%;
+    --blob-1-right: -100px;
+    --blob-2-bottom: 30%;
+    --blob-2-left: 10%;
+    --blob-3-opacity: 0.6;
+}
+
+body.section-price {
+    --blob-1-top: 10%;
+    --blob-1-right: 40%;
+    --blob-2-bottom: 20%;
+    --blob-2-left: -200px;
+    --blob-3-opacity: 0.5;
+}
+
+body.section-payment {
+    --blob-1-top: 40%;
+    --blob-1-right: -200px;
+    --blob-2-bottom: 10%;
+    --blob-2-left: 40%;
+    --blob-3-opacity: 0.4;
+}
+
+body.section-faq {
+    --blob-1-top: -100px;
+    --blob-1-right: 10%;
+    --blob-2-bottom: 20%;
+    --blob-2-left: 20%;
+    --blob-3-opacity: 0.7;
+}
+
+body.section-contact {
+    --blob-1-top: 10%;
+    --blob-1-right: 10%;
+    --blob-2-bottom: -100px;
+    --blob-2-left: -100px;
+    --blob-3-opacity: 0.5;
+}
+
+/* Flying Decor Elements */
+.decor-element {
+    position: absolute;
+    color: var(--accent-teal);
+    font-family: monospace;
+    font-size: 24px;
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: -90;
+    will-change: transform;
+}
+
+.decor-1 {
+    top: 10%;
+    left: 15%;
+    animation: float-slow 30s infinite alternate;
+}
+
+.decor-2 {
+    top: 40%;
+    right: 10%;
+    animation: float-medium 25s infinite alternate-reverse;
+    font-size: 40px;
+}
+
+.decor-3 {
+    bottom: 20%;
+    left: 10%;
+    animation: float-slow 35s infinite alternate;
+}
+
+.decor-4 {
+    bottom: 40%;
+    right: 25%;
+    animation: float-medium 20s infinite alternate;
+}
+
+.decor-5 {
+    top: 50%;
+    left: 45%;
+    width: 60px;
+    height: 1px;
+    background: var(--accent-teal);
+    opacity: 0.1;
+    animation: line-drift 40s infinite linear;
+}
+
+@keyframes line-drift {
+    0% {
+        transform: translateX(-100px) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(100px) rotate(45deg);
+    }
+}
+
+@keyframes float-slow {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(100px, 150px) scale(1.2);
+    }
+}
+
+@keyframes float-medium {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-80px, 100px) rotate(15deg) scale(1.1);
+    }
+}
+
+/* Ensure sections are transparent by default, but allow overrides */
+section {
+    position: relative;
+    /* background: transparent; - Removed to allow specific backgrounds */
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .blob {
+        width: 300px;
+        height: 300px;
+        filter: blur(50px);
+    }
+
+    .bg-grid {
+        background-size: 40px 40px;
+    }
+}

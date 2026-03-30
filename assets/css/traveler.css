@@ -1,0 +1,62 @@
+/**
+ * Background Traveler Styles
+ */
+.bg-traveler-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* Не заважає клікам */
+    z-index: -1;
+    /* За контентом */
+    overflow: hidden;
+}
+
+.layered-cube {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    opacity: 0.5;
+    /* Увеличено на 10% */
+    filter: blur(0.5px);
+    transition: transform 1.5s cubic-bezier(0.1, 0.4, 0.2, 1), opacity 1s ease-in-out;
+    will-change: transform, opacity;
+}
+
+.cube-top {
+    fill: url(#cubeGradient);
+}
+
+.cube-left {
+    fill: rgba(255, 255, 255, 0.03);
+}
+
+.cube-right {
+    fill: rgba(255, 255, 255, 0.01);
+}
+
+/* Анімація світіння шарів */
+@keyframes layerPulse {
+
+    0%,
+    100% {
+        stroke-opacity: 0.2;
+    }
+
+    50% {
+        stroke-opacity: 0.5;
+    }
+}
+
+.cube-layers path {
+    animation: layerPulse 3s infinite ease-in-out;
+}
+
+/* Приховати на мобільних, щоб не відволікати */
+@media (max-width: 1024px) {
+    .bg-traveler-container {
+        display: none;
+    }
+}

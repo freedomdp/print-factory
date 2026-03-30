@@ -1,0 +1,578 @@
+{
+    "site": {
+        "name": "Print Factory",
+        "tagline": "Промислова ферма 3D-друку",
+        "description": "500 Bambu Lab A1 та P1S • швидкі терміни • контроль якості"
+    },
+    "header": {
+        "logo_text": "PRINT FACTORY",
+        "menu": [
+            {
+                "label": "послуги",
+                "url": "#services"
+            },
+            {
+                "label": "ціни",
+                "url": "#price"
+            },
+            {
+                "label": "портфоліо",
+                "url": "#portfolio"
+            },
+            {
+                "label": "FAQ",
+                "url": "#faq"
+            }
+        ],
+        "contacts": {
+            "phone": "(099) 999 99 83",
+            "phone_link": "tel:+380999999988",
+            "phone_icon": "/wp-content/uploads/2026/02/phone.svg",
+            "telegram": "https://t.me/print_factory_ua",
+            "telegram_label": "@print_factory_ua",
+            "telegram_icon": "/wp-content/uploads/2026/02/telegram.svg",
+            "viber": "viber://chat?number=380999999988",
+            "viber_label": "Написати у Viber",
+            "viber_icon": "/wp-content/uploads/2026/02/viber.svg",
+            "image": "/wp-content/themes/print-factory/assets/images/portfolio/drone-frame-prototype.png",
+            "signal": "https://signal.me/#p/+380999999988",
+            "signal_label": "Signal",
+            "whatsapp": "https://wa.me/380999999988",
+            "whatsapp_label": "Написати у WhatsApp",
+            "whatsapp_icon": "/wp-content/uploads/2026/02/whatsapp.svg",
+            "email": "info@printfactory.ua",
+            "email_label": "info@printfactory.ua",
+            "email_icon": "/wp-content/uploads/2026/02/email.svg",
+            "cta_text": "Замовити дзвінок"
+        }
+    },
+    "hero": {
+        "slides": [
+            {
+                "id": 1,
+                "title": "Промислова ферма 3D-друку",
+                "background_image": "Wide shot of a modern 3D printing workshop, in the center a large table covered with various printed objects: car headlight housings, drone blades, decorative dragon figures, 'Motherland' stele model, gear mechanisms, 2-story house architectural model, boxes with finished parts. Behind the table are two-tier shelving units filled with 3D printers - some open frame (Bambu Lab A1), others enclosed (Bambu Lab X1). To the side, a wall rack with colorful filament spools (1kg and 3kg). Realistic photo style, slightly dark atmosphere with green printer status lights, depth of field 9:16 vertical composition with empty bottom-left corner for text",
+                "background_image_url": "/wp-content/themes/print-factory/assets/images/hero/slide-1.png",
+                "background_image_large_url": "/wp-content/themes/print-factory/assets/images/hero/slide-1-large.webp",
+                "subtitle": "500 Bambu Lab A1 та P1S • швидкі терміни • контроль якості",
+                "cta_text": "Розрахувати проєкт →",
+                "cta_action": "open_calculator",
+                "secondary_cta_text": "Наші послуги",
+                "secondary_cta_action": "scroll_to_services"
+            },
+            {
+                "id": 2,
+                "title": "Декор і фігурки на замовлення",
+                "background_image": "Detailed close-up macro shot of a table displaying premium 3D printed decor items: picture frames with intricate baguette patterns, stylish vases, modern lamps, Marvel character figurines, artistic sculptures. In the center, a complex decorative element that looks great in a home interior. Smooth studio lighting, high resolution, realistic photo style, soft background blur, 9:16 vertical ratio with darkened bottom-left area",
+                "background_image_url": "/wp-content/themes/print-factory/assets/images/hero/slide-2.png",
+                "background_image_large_url": "/wp-content/themes/print-factory/assets/images/hero/slide-2-large.webp",
+                "subtitle": "Авторські об'єкти • акуратні шари",
+                "cta_text": "Переглянути каталог →",
+                "cta_action": "scroll_to_portfolio",
+                "secondary_cta_text": "Наші послуги",
+                "secondary_cta_action": "scroll_to_services"
+            },
+            {
+                "id": 3,
+                "title": "Функціональні деталі: авто й електроніка",
+                "background_image": "Garage workshop setting, a sleek modern car with some body parts removed (bumper, headlight) is visible in the background. In the foreground, a workbench with the freshly 3D printed replacement parts: black functional gears, brackets, headlight housing. Mechanic tools scattered around for atmosphere. Two or three modern Bambu Lab printers visible nearby. Brutalist industrial style, dramatic lighting, highly realistic, 9:16 vertical format with negative space bottom-left",
+                "background_image_url": "/wp-content/themes/print-factory/assets/images/hero/slide-3.png",
+                "background_image_large_url": "/wp-content/themes/print-factory/assets/images/hero/slide-3-large.webp",
+                "subtitle": "Бампери, спойлери, накладки • Корпуси S–XL",
+                "cta_text": "Залишити заявку →",
+                "cta_action": "open_calculator",
+                "secondary_cta_text": "Наші послуги",
+                "secondary_cta_action": "scroll_to_services"
+            },
+            {
+                "id": 4,
+                "title": "Архітектурні макети та прототипи",
+                "background_image": "High-angle shot of a large architectural model on a table. A U-shaped 18-story residential complex, detailed courtyard with trees, pathways, and a central pool. To the right, a cross-section of the building showing furnished apartments. The model has built-in warm LED lighting. Museum-quality presentation, clean white aesthetic, realistic photo style, 9:16 vertical crop with dark overlay in bottom-left corner",
+                "background_image_url": "/wp-content/themes/print-factory/assets/images/hero/slide-4.png",
+                "background_image_large_url": "/wp-content/themes/print-factory/assets/images/hero/slide-4-large.webp",
+                "subtitle": "Точність до 0,1 мм • презентаційна якість",
+                "cta_text": "Переглянути каталог →",
+                "cta_action": "scroll_to_portfolio",
+                "secondary_cta_text": "Наші послуги",
+                "secondary_cta_action": "scroll_to_services"
+            },
+            {
+                "id": 5,
+                "title": "Серійне виробництво з пластику",
+                "background_image": "Mass production scene throughout a workshop table, covered with hundreds of identical orange plastic housings for electronics. The parts are small, hand-sized, consisting of two halves. Boxes filled with these finished orange parts are stacked on the floor. Background hints at a busy production line. Motion blur effect to convey speed and scale. Industrial lighting, photorealistic, 9:16 vertical aspect ratio with clear text area bottom-left",
+                "background_image_url": "/wp-content/themes/print-factory/assets/images/hero/slide-5.png",
+                "background_image_large_url": "/wp-content/themes/print-factory/assets/images/hero/slide-5-large.webp",
+                "subtitle": "Партії 50–10 000 шт. • стабільна геометрія",
+                "cta_text": "Розрахувати проєкт →",
+                "cta_action": "open_calculator",
+                "secondary_cta_text": "Наші послуги",
+                "secondary_cta_action": "scroll_to_services"
+            }
+        ]
+    },
+    "about": {
+        "title": "Ваш Надійний Партнер у 3D Виробництві",
+        "description": "Швидкий розрахунок, промислова якість, будь-які тиражі. Ваше завдання — наше рішення під ключ з доставкою по Україні.",
+        "background_prompt": "Dark abstract background with a 3D wireframe grid smoothly transforming into a solid 3D object, symbolizing the process from idea to product. Cyberpunk aesthetics, neon turquoise accents, deep dark blue background. High tech, precision, manufacturing context.",
+        "stats": [
+            {
+                "number": "500+",
+                "label": "принтерів Bambu Lab A1 та P1S",
+                "sublabel": "Промисловий масштаб виробництва"
+            },
+            {
+                "number": "250+ кг/добу",
+                "label": "Максимальна продуктивність",
+                "sublabel": ""
+            },
+            {
+                "number": "1000+",
+                "label": "Виконаних замовлень",
+                "sublabel": ""
+            }
+        ]
+    },
+    "how_it_works": {
+        "title": "5 кроків до вашого готового виробу",
+        "steps": [
+            {
+                "id": "01",
+                "title": "Маєте ідею або проект",
+                "text": "Готові втілити в життя",
+                "icon": "fa-solid fa-lightbulb"
+            },
+            {
+                "id": "02",
+                "title": "Додайте фото/модель",
+                "text": "(якщо є) — або коротко опишіть задачу",
+                "icon": "fa-solid fa-cloud-upload-alt"
+            },
+            {
+                "id": "03",
+                "title": "Отримаєте розрахунок",
+                "text": "за 2 години",
+                "icon": "fa-solid fa-calculator"
+            },
+            {
+                "id": "04",
+                "title": "Друкуємо 2–5 днів",
+                "text": "друкуємо хоч на 500 принтерах одночастно",
+                "icon": "fa-solid fa-cube"
+            },
+            {
+                "id": "05",
+                "title": "Пакуємо та відправляємо",
+                "text": "Новою Поштою по всій Україні",
+                "icon": "fa-solid fa-box-open"
+            }
+        ]
+    },
+    "portfolio": {
+        "title": "Реальні проєкти, реальні результати",
+        "subtitle": "Приклади того, що ми створюємо щодня",
+        "items": [
+            {
+                "title": "Кріплення для сонячних панелей",
+                "image": "/wp-content/themes/print-factory/assets/images/portfolio/solar-panel-bracket.webp",
+                "tech": "FDM",
+                "material": "ASA",
+                "weight": "200г",
+                "quantity": "4 шт",
+                "term": "4 дні",
+                "description": "Стійкі до ультрафіолету кронштейни для дахової установки.",
+                "image_prompt": "Ultra-realistic macro photo of a 3D printed solar panel bracket, industrial ASA plastic, grey matte finish, visible high-quality layer lines, professional workshop background, 16:9 aspect ratio, 8k resolution."
+            },
+            {
+                "title": "Прототип корпусу дрона",
+                "image": "/wp-content/themes/print-factory/assets/images/portfolio/drone-frame-prototype.webp",
+                "tech": "FDM",
+                "material": "Carbon Fiber",
+                "weight": "250г",
+                "quantity": "2 шт",
+                "term": "5 днів",
+                "description": "Легкий та надміцний каркас для тестових польотів.",
+                "image_prompt": "Macro shot of a drone frame prototype 3D printed in black carbon fiber filament, rugged matte texture, intricate lightweight geometry, studio lighting, 16:9 aspect ratio, highly detailed."
+            },
+            {
+                "title": "Перехідник для Tesla",
+                "image": "/wp-content/themes/print-factory/assets/images/portfolio/tesla-charger-adapter.webp",
+                "tech": "FDM",
+                "material": "ABS+",
+                "weight": "120г",
+                "quantity": "5 шт",
+                "term": "3 дні",
+                "description": "Кастомний адаптер для зарядної станції.",
+                "image_prompt": "Close-up of a custom Tesla charger adapter 3D printed in premium black ABS+ plastic, smooth finish, precise edges, technical details visible, 16:9 aspect ratio, photorealistic."
+            },
+            {
+                "title": "Шестерня газонокосарки",
+                "image": "/wp-content/themes/print-factory/assets/images/portfolio/lawnmower-gear.webp",
+                "tech": "FDM",
+                "material": "Nylon",
+                "weight": "50г",
+                "quantity": "1 шт",
+                "term": "2 дні",
+                "description": "Посилена деталь на заміну зламаної заводської.",
+                "image_prompt": "Macro photo of a replacement lawnmower gear 3D printed in tough natural Nylon, visible high-strength layer adhesion, clean gear teeth, industrial workshop setting, 16:9 aspect ratio."
+            },
+            {
+                "title": "Світильник \"Хвиля\"",
+                "image": "/wp-content/themes/print-factory/assets/images/portfolio/wave-lamp.webp",
+                "tech": "FDM",
+                "material": "PLA Silk",
+                "weight": "400г",
+                "quantity": "10 шт",
+                "term": "4 дні",
+                "description": "Складна параметрична форма з градієнтом кольорів.",
+                "image_prompt": "Parametric wavy lamp shade 3D printed in Silk PLA with metallic cyan sheen, light glowing from within, layered texture creating artistic patterns, modern interior background, 16:9 aspect ratio."
+            },
+            {
+                "title": "Логотип NEXUS INOVATIONS",
+                "image": "/wp-content/themes/print-factory/assets/images/portfolio/nexus-innovations-logo.webp",
+                "tech": "FDM",
+                "material": "PLA",
+                "weight": "500г",
+                "quantity": "1 шт",
+                "term": "4 дні",
+                "description": "Об'ємні літери з кріпленням під LED-підсвітку.",
+                "image_prompt": "Large 3D printed corporate logo letters on a clean workbench, solid white PLA, internal hollow channels for LEDs visible, smooth side walls, 16:9 aspect ratio, realistic office branding."
+            },
+            {
+                "title": "Рельєфна карта Карпат",
+                "image": "/wp-content/themes/print-factory/assets/images/portfolio/carpathian-relief-map.webp",
+                "tech": "FDM",
+                "material": "PLA Matte",
+                "weight": "800г",
+                "quantity": "1 шт",
+                "term": "6 днів",
+                "description": "Деталізована топографічна 3D модель місцевості.",
+                "image_prompt": "Ultra-realistic macro shot of a 3D printed topographical relief map focusing on the highest peaks of the Ukrainian Carpathians, including Hoverla and Pip Ivan. Intricate ridges and valleys, printed in premium matte forest green and rocky grey PLA, visible high-precision layer lines, dramatic studio lighting, 16:9 aspect ratio."
+            },
+            {
+                "title": "Форми для бетону",
+                "image": "/wp-content/themes/print-factory/assets/images/portfolio/concrete-mold.webp",
+                "tech": "FDM",
+                "material": "TPU",
+                "weight": "1.5кг",
+                "quantity": "6 шт",
+                "term": "6 днів",
+                "description": "Гнучка багаторазова опалубка для садового декору.",
+                "image_prompt": "Macro shot of a precision 3D printed TPU flexible mold for a small concrete designer vase, soft blue material, intricate internal geometric textures, visible fine layer lines, professional studio lighting, 16:9 aspect ratio, highly realistic."
+            },
+            {
+                "title": "Макет інтер'єру квартири",
+                "image": "/wp-content/themes/print-factory/assets/images/portfolio/apartment-interior-model.webp",
+                "tech": "FDM",
+                "material": "PLA White",
+                "weight": "600г",
+                "quantity": "1 шт",
+                "term": "5 днів",
+                "description": "Розбірний макет для презентації планування клієнту.",
+                "image_prompt": "Architectural 3D model of a modern apartment interior, printed in white matte PLA, 1:50 scale, visible furniture and walls, clean presentation on a white table, studio lighting, 16:9 aspect ratio."
+            },
+            {
+                "title": "Макет ЖК \"Comfort City\"",
+                "image": "/wp-content/themes/print-factory/assets/images/portfolio/comfort-city-model.webp",
+                "tech": "FDM",
+                "material": "PLA",
+                "weight": "2кг",
+                "quantity": "1 шт",
+                "term": "6 днів",
+                "description": "Масштабна модель для відділу продажів.",
+                "image_prompt": "Detailed scale model of a modern residential complex, architecture 3D printed in white and grey PLA, including courtyard with trees, balconies, museum quality presentation, 16:9 aspect ratio."
+            },
+            {
+                "title": "Анатомічна модель черепа",
+                "image": "/wp-content/themes/print-factory/assets/images/portfolio/medical-skull-model.webp",
+                "tech": "FDM",
+                "material": "PLA Bone",
+                "weight": "400г",
+                "quantity": "3 шт",
+                "term": "4 дні",
+                "description": "Навчальний посібник для студентів-медиків.",
+                "image_prompt": "Medical grade 3D printed human skull model, bone-white PLA material, authentic bone texture and anatomical details, displayed on a clean medical desk, 16:9 aspect ratio, photorealistic."
+            },
+            {
+                "title": "Ортез на руку (прототип)",
+                "image": "/wp-content/themes/print-factory/assets/images/portfolio/wrist-orthosis-prototype.webp",
+                "tech": "FDM",
+                "material": "Nylon",
+                "weight": "150г",
+                "quantity": "1 шт",
+                "term": "3 дні",
+                "description": "Індивідуальний фіксатор, змодельований по скану руки.",
+                "image_prompt": "Custom medical wrist orthosis prototype 3D printed in natural Nylon, ergonomic lattice structure, matte finish, professional clinical environment, highly realistic, 16:9 aspect ratio."
+            },
+            {
+                "title": "Фігурка \"Warhammer\"",
+                "image": "/wp-content/themes/print-factory/assets/images/portfolio/warhammer-figurine.webp",
+                "tech": "SLA",
+                "material": "Resin",
+                "weight": "200г",
+                "quantity": "5 шт",
+                "term": "4 дні",
+                "description": "Високодеталізований 3D друк для художнього розпису.",
+                "image_prompt": "Hyper-detailed miniature figurine for Warhammer game, 3D printed in grey resin (SLA), smooth surface, intricate armor and weapon details, 16:9 aspect ratio."
+            },
+            {
+                "title": "Органайзер Gridfinity",
+                "image": "/wp-content/themes/print-factory/assets/images/portfolio/gridfinity-workbench.webp",
+                "tech": "FDM",
+                "material": "PETG",
+                "weight": "500г",
+                "quantity": "20 шт",
+                "term": "3 дні",
+                "description": "Модульна система зберігання інструментів.",
+                "image_prompt": "Ultra-realistic shot of a clean, premium maker's workbench. A single complex mechanical device is being assembled in the center. Above the solid wood surface, a modern block of power outlets with cords. The wall features a professional tool board with a few select power tools (corded drill, heat gun) and hand tools (pliers, screwdrivers, files) neatly arranged. To the side, a vertical storage system with small, colorful organized drawers for hardware. No 3D printers or clutter. Professional bright top-down lighting, 16:9 aspect ratio, architectural photography."
+            },
+            {
+                "title": "Корпуси для закріплення Starlink на дах автомобіля",
+                "image": "/wp-content/themes/print-factory/assets/images/portfolio/starlink-vehicle-mounts.webp",
+                "tech": "FDM",
+                "material": "ASA/ABS",
+                "weight": "1.2кг",
+                "quantity": "50 шт",
+                "term": "7 днів",
+                "description": "Захищені корпуси для встановлення на дах авто.",
+                "image_prompt": "Ultra-realistic studio photo of multiple 3D printed Starlink vehicle roof mounts. The rectangular flat cases are shown in a stack, featuring different colors: tactical khaki, clean white, slate grey, and matte black. Each case has a raised 'Starlink' logo on the top surface. The corners have professional mounting feet with round rubber pads. High-quality ASA plastic texture, clean soft lighting, 16:9 aspect ratio."
+            },
+            {
+                "title": "Заглушки для меблів",
+                "image": "/wp-content/themes/print-factory/assets/images/portfolio/furniture-plugs.webp",
+                "tech": "FDM",
+                "material": "PETG",
+                "weight": "15г",
+                "quantity": "1000 шт",
+                "term": "3 дні",
+                "description": "Нестандартний розмір для меблевого виробництва.",
+                "image_prompt": "Batch of 3D printed custom furniture plugs in brown PETG, variety of sizes, smooth top surface, professional photography of a pile of parts, 16:9 aspect ratio."
+            },
+            {
+                "title": "Брелоки BASE Restaurant",
+                "image": "/wp-content/themes/print-factory/assets/images/portfolio/base-restaurant-keychains.webp",
+                "tech": "FDM",
+                "material": "PLA Multi",
+                "weight": "10г",
+                "quantity": "500 шт",
+                "term": "4 дні",
+                "description": "Корпоративні сувеніри до свята компанії.",
+                "image_prompt": "Corporate 3D printed keychains for BASE restaurant, multi-color PLA with logo, clean finish, organized on a flat surface, 16:9 aspect ratio."
+            },
+            {
+                "title": "Пропелери для дронів DJI",
+                "image": "/wp-content/themes/print-factory/assets/images/portfolio/dji-propellers.webp",
+                "tech": "FDM",
+                "material": "Nylon-CF",
+                "weight": "12г",
+                "quantity": "1000 шт",
+                "term": "14 днів",
+                "description": "Аеродинамічні деталі з карбонового композиту.",
+                "image_prompt": "Set of high-performance drone propellers 3D printed in Nylon-CF (carbon fiber), sleek black matte finish, aerodynamic profile, technical precision visible, 16:9 aspect ratio."
+            }
+        ]
+    },
+    "pricing": {
+        "title": "Правильний матеріал = успіх вашого проєкту",
+        "subtitle": "Більше 10 видів пластику під будь-яку задачу",
+        "materials": [
+            {
+                "name": "PLA",
+                "price_single": "2.5 грн/г",
+                "price_bulk": "1.9 грн/г",
+                "usage": "Декор, фігурки, прототипи. Екологічний.",
+                "description": "Полілактид (PLA) — найпопулярніший матеріал для 3D-друку. Виготовляється з кукурудзяного крохмалю, тому він екологічний та не має запаху. Ідеально підходить для деталізованих фігурок, архітектурних макетів та прототипів, які не піддаються високим температурам."
+            },
+            {
+                "name": "PETG",
+                "price_single": "3 грн/г",
+                "price_bulk": "2.4 грн/г",
+                "usage": "Функціональні деталі. Міцний, термостійкий.",
+                "description": "PETG поєднує простоту друку PLA та міцність ABS. Він стійкий до ультрафіолету та вологи, витримує температури до 70°C. Найкращий вибір для функціональних кріплень, корпусів приладів та деталей, що працюють на вулиці."
+            },
+            {
+                "name": "TPU",
+                "price_single": "4.5 грн/г",
+                "price_bulk": "3.5 грн/г",
+                "usage": "Гнучкі деталі, амортизатори, ущільнювачі.",
+                "description": "TPU — це еластичний флекс-матеріал, схожий за властивостями на міцну гуму. Він стійкий до стирання, масел та жирів. Використовується для друку чохлів, демпферів, прокладок та автомобільних сайлентблоків."
+            },
+            {
+                "name": "ABS/ASA",
+                "price_single": "3.5 грн/г",
+                "price_bulk": "2.7 грн/г",
+                "usage": "Навантажені деталі, авто компоненти.",
+                "description": "Інженерні пластики для серйозних задач. ABS стійкий до ударів, а ASA додатково не вигорає на сонці. Витримують температури до 100°C. Широко застосовуються в автомобілебудуванні та для промислових корпусів."
+            },
+            {
+                "name": "Nylon",
+                "price_single": "5 грн/г",
+                "price_bulk": "4 грн/г",
+                "usage": "Міцні механізми. Стійкий до зносу.",
+                "description": "Нейлон — надзвичайно міцний та зносостійкий матеріал з низьким коефіцієнтом тертя. Ідеально підходить для шестерень, втулок та підшипників ковзання. Витримують значні механічні навантаження."
+            }
+        ]
+    },
+    "calculator": {
+        "min_order_amount": 150,
+        "warning_text": "⚠️ Для попереднього розрахунку вважаємо, що виріб простої прямокутної форми. Однокольоровий друк",
+        "max_dimension": 2560,
+        "printer_size_limit": 256,
+        "size_surcharge": 0.1,
+        "discounts": {
+            "weight_threshold_g": 500,
+            "weight_discount_percent": 10,
+            "quantity_progressive": {
+                "min_qty": 50,
+                "max_qty": 2000,
+                "min_discount": 5,
+                "max_discount": 30
+            }
+        },
+        "material_densities": {
+            "PLA": 1.24,
+            "PETG": 1.27,
+            "TPU": 1.21,
+            "ABS/ASA": 1.07,
+            "Nylon": 1.14
+        }
+    },
+    "payment": {
+        "title": "Оплата так, як вам зручно",
+        "btb_title": "Гнучкі умови оплати: ФОП та з ПДВ",
+        "b2c": {
+            "label": "Для себе",
+            "methods": [
+                "Рахунок ФОП",
+                "Оплата на карту",
+                "Онлайн оплата",
+                "Оплата при отриманні"
+            ],
+            "docs": [
+                "Рахунок",
+                "Акт виконаних робіт"
+            ],
+            "benefits": [
+                "Швидке оформлення",
+                "Без зайвих паперів",
+                "Гнучкі способи"
+            ]
+        },
+        "b2b": {
+            "label": "Компанія",
+            "methods": [
+                "Рахунок-фактура з ПДВ",
+                "Робота за договором",
+                "Безготівковий розрахунок"
+            ],
+            "docs": [
+                "Рахунок з ПДВ",
+                "Акт",
+                "Договір",
+                "Документи MeDoc"
+            ],
+            "benefits": [
+                "Офіційний документообіг",
+                "Знижки 10-30% від 10 кг",
+                "Повний пакет для бухгалтерії"
+            ]
+        }
+    },
+    "faq": {
+        "title": "Все, що ви хотіли знати про 3D друк",
+        "items": [
+            {
+                "question": "Чи можна замовити 1 фігурку?",
+                "answer": "Так, ми працюємо з замовленнями будь-якого обсягу — від поодиноких прототипів до серій у тисячі одиниць."
+            },
+            {
+                "question": "Немає 3D моделі — що робити?",
+                "answer": "Не проблема. Ми можемо створити модель за вашим кресленням, ескізом або навіть фотографією. Також підкажемо де знайти готові рішення."
+            },
+            {
+                "question": "Які терміни виготовлення?",
+                "answer": "Зазвичай 2–5 робочих днів. Для дуже великих партій термін узгоджується індивідуально, але завдяки 500 принтерам ми робимо це швидше за всіх."
+            },
+            {
+                "question": "Чи робите тестовий зразок?",
+                "answer": "Так, при замовленні серії ми рекомендуємо надрукувати тестовий зразок для перевірки геометрії та механічних властивостей."
+            },
+            {
+                "question": "Який матеріал обрати?",
+                "answer": "Все залежить від задачі. PLA — для декору, PETG — для функціональних деталей, ABS/ASA — для авто. Ми проконсультуємо вас безкоштовно."
+            },
+            {
+                "question": "Чи міцні надруковані деталі?",
+                "answer": "Сучасні матеріали як Nylon або Carbon-filled PETG дозволяють створювати деталі, що не поступаються литтєвим за міцністю."
+            },
+            {
+                "question": "Як відбувається доставка?",
+                "answer": "Надійно пакуємо та відправляємо Новою Поштою по всій Україні. Можливий самовивіз у м. Дніпро."
+            },
+            {
+                "question": "Працюєте з бізнесом/ПДВ?",
+                "answer": "Так, ми повноцінно працюємо з юридичними особами та ФОП. Надаємо повний пакет документів: рахунок, акт, договір."
+            },
+            {
+                "question": "Які документи ви надаєте для компаній з ПДВ?",
+                "answer": "Рахунок-фактура з ПДВ, акт виконаних робіт, договір (за потреби). Ведемо електронний документообіг через MeDoc."
+            },
+            {
+                "question": "Чи можна укласти договір на постійну співпрацю?",
+                "answer": "Так, для постійних клієнтів ми пропонуємо договір з фіксацією цін та індивідуальними знижками на обсяг."
+            },
+            {
+                "question": "Чи робите термінові замовлення?",
+                "answer": "Так, у нас є послуга 'Друк на вчора' — ми запускаємо ваші моделі в пріоритетну чергу на вільні потужності."
+            },
+            {
+                "question": "Як виглядають деталі після друку?",
+                "answer": "Ми друкуємо на Bambu Lab з високою роздільною здатністю, тому шари майже не помітні. За потреби робимо постобробку."
+            },
+            {
+                "question": "Які знижки на великі замовлення?",
+                "answer": "При замовленні від 10 кг пластика або партій від 50 шт діють знижки від 10% до 30%."
+            }
+        ]
+    },
+    "contact": {
+        "address": "м. Дніпро | Доставка по всій Україні"
+    },
+    "footer": {
+        "copyright": "© 2024-2026 Print Factory. Всі права захищені."
+    },
+    "services": {
+        "title": "Вирішуємо складні завдання",
+        "items": [
+            {
+                "id": "service_1",
+                "title": "Термінова заміна деталей",
+                "description": "Друк запчаснин, які більше не випускаються або довго чекати.",
+                "icon": "fa-solid fa-clock-rotate-left"
+            },
+            {
+                "id": "service_2",
+                "title": "Складна геометрія",
+                "description": "Виготовлення форм, які неможливо отримати шляхом фрезерування чи лиття.",
+                "icon": "fa-solid fa-shapes"
+            },
+            {
+                "id": "service_3",
+                "title": "Малі тиражі",
+                "description": "Економічно вигідне виробництво без витрат на прес-форми. Виконуємо замовлення від 1 шт.",
+                "icon": "fa-solid fa-layer-group"
+            },
+            {
+                "id": "service_4",
+                "title": "Прототипування",
+                "description": "Створення функціональних прототипів для тестування дизайну та ергономіки у стислі терміни.",
+                "icon": "fa-solid fa-microchip"
+            },
+            {
+                "id": "service_5",
+                "title": "Індивідуальні проекти",
+                "description": "Реалізація нестандартних замовлень за вашими ТЗ.",
+                "icon": "fa-solid fa-wand-magic-sparkles"
+            }
+        ]
+    }
+}
