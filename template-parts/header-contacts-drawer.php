@@ -4,13 +4,23 @@
  */
 $contacts = PrintFactory_Content::get_section('header.contacts');
 
-// Fallback icons from theme assets
+// Fallback icons logic - override if empty or pointing to old local uploads
 $assets_icons = get_template_directory_uri() . '/assets/images/icons/';
-$phone_icon = !empty($contacts['phone_icon']) ? $contacts['phone_icon'] : $assets_icons . 'phone.svg';
-$telegram_icon = !empty($contacts['telegram_icon']) ? $contacts['telegram_icon'] : $assets_icons . 'telegram.svg';
-$viber_icon = !empty($contacts['viber_icon']) ? $contacts['viber_icon'] : $assets_icons . 'viber.svg';
-$whatsapp_icon = !empty($contacts['whatsapp_icon']) ? $contacts['whatsapp_icon'] : $assets_icons . 'whatsapp.svg';
-$email_icon = !empty($contacts['email_icon']) ? $contacts['email_icon'] : $assets_icons . 'email.svg';
+
+if (!function_exists('get_pf_icon')) {
+    function get_pf_icon($db_url, $fallback_name, $assets_path) {
+        if (empty($db_url) || strpos($db_url, 'uploads/2026/02') !== false) {
+            return $assets_path . $fallback_name;
+        }
+        return $db_url;
+    }
+}
+
+$phone_icon = get_pf_icon($contacts['phone_icon'] ?? '', 'phone.svg', $assets_icons);
+$telegram_icon = get_pf_icon($contacts['telegram_icon'] ?? '', 'telegram.svg', $assets_icons);
+$viber_icon = get_pf_icon($contacts['viber_icon'] ?? '', 'viber.svg', $assets_icons);
+$whatsapp_icon = get_pf_icon($contacts['whatsapp_icon'] ?? '', 'whatsapp.svg', $assets_icons);
+$email_icon = get_pf_icon($contacts['email_icon'] ?? '', 'email.svg', $assets_icons);
 ?>
 
 <div class="contacts-drawer" id="contacts-drawer" aria-hidden="true">
